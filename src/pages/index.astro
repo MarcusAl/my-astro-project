@@ -1,16 +1,24 @@
 ---
+// This is Astro's frontmatter
+// here you can write regular JavaScript or TypeScript
+// It will only run on the server and never executes client-side
+import Food from '../components/food.vue';
+import Navigation from '../components/navigation.vue';
 
+const title: string = 'Hello World!';
 ---
 
-<html lang="en">
-	<head>
-		<meta charset="utf-8" />
-		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-		<meta name="viewport" content="width=device-width" />
-		<meta name="generator" content={Astro.generator} />
-		<title>Astro</title>
-	</head>
-	<body>
-		<h1>Astro</h1>
-	</body>
+<html>
+  <Navigation />
+
+  <!-- Astro uses a JSX-like syntax in it's body -->
+  <title>{title}</title>
+
+  <body>
+    <main>
+      <h1>Food I like:</h1>
+      <!-- let's render our food items -->
+      <Food />
+    </main>
+  </body>
 </html>
